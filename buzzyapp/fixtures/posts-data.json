@@ -1,0 +1,17 @@
+[
+  {
+    "model": "buzzyapp.UserType",
+    "pk": 1,
+    "fields": {
+      "type_name": "user"
+    }
+  },
+  {
+    "model": "buzzyapp.UserType",
+    "pk": 2,
+    "fields": {
+      "type_name": "supplier"
+    }
+  }
+ 
+]

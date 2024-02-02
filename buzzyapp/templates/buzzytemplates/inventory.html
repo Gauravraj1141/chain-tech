@@ -1,0 +1,66 @@
+{% extends 'buzzytemplates/base.html' %}
+{% load static %}
+{% block title %}
+Inventory
+{% endblock title %}
+
+
+{% block buttons %}
+<div class="d-flex" role="button">
+    {% comment %} <a class=" btn btn-success mx-2 " href="{% url 'logout' %}">Log Out</a> {% endcomment %}
+    <a class=" btn btn-success mx-2 " href="/">Log Out</a>
+   
+
+</div>
+{% endblock buttons %}
+
+
+{% block content %}
+
+<div class="container h-100 text-center mycolor my-2 rounded-3 ">
+    <div class="mt-4">
+        <h2 id="typed-heading">Blog Post</h2>
+        <div class="d-flex justify-content-end">
+            {% comment %} <a href="{% url 'showblog' %}" class="btn btn-outline-warning ">Add Blog</a> {% endcomment %}
+        </div>
+        <hr>
+{% comment %} 
+        {% for msg in messages %}
+        <div class="alert alert-success" role="alert" id="alert">
+            <h4 {% if msg.tags %} class=" {{ msg.tags }}  alert-heading" {% endif %}>{{ msg }}</h4>
+        </div>
+        {% endfor %} {% endcomment %}
+
+        <div class="row">
+            <div class="col-md-12  shadow-lg p-3 mb-5  rounded">
+                <h3 class="readhead font-heading">title</h3>
+
+                <p class="font-para">desc</p>
+            </div>
+
+           
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+
+
+{% block js %}
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"> </script>
+
+<script>
+    const options = {
+        strings: ['Blog Post', 'Welcome to The Blog Post'],
+        typeSpeed: 50,
+        startDelay: 100,
+        cursorChar: ''
+    };
+
+    const typedHeading = new Typed('#typed-heading', options);
+    typedHeading.start();
+</script>
+
+
+{% endblock js %}
